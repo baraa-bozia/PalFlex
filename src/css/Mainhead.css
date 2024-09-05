@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-container {
+    text-align: center;
+    background-color:#f4f4f4;
+    height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #099654;
+    color: white;
+    padding: 10px 20px;
+  }
+  .logo-icon {
+    width: 40px; /* تعديل العرض */
+    height: 15px; /* تعديل الارتفاع */
+    border-radius: 50%; /* جعل الحواف دائرية بالكامل */
+    margin-right: 10px; /* مسافة بين الأيقونة والنص */
+  }
+  
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .login-section button {
+    background-color: #224c4a;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .content1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:red ; */
+    height: calc(100vh - 60px); /* لاستثناء الشريط العلوي */
+    margin-top: -600px;
+    margin-bottom: -60px;
+
+  }
+  
+  .text-section {
+    max-width: 600px;
+    margin-right: 20px;
+    background-color: #099654;
+  }
+  
+  .text-section h1 {
+    color: #224c4a;
+    font-size: 2.5rem;
+  }
+  
+  .cta-button {
+    background-color: #224c4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .image-section img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  

@@ -1,0 +1,38 @@
+.teachers-register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .teachers-register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .teachers-register-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .teachers-register-container button {
+    padding: 10px;
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .teachers-register-container button:hover {
+    background-color: #45a049;
+  }
+  
