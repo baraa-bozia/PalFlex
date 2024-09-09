@@ -45,7 +45,7 @@ export const prod=
   export default function Course(){
      const navigate = useNavigate();
        const gotToNewPage=()=>{
-         navigate("/Sign");
+         navigate("/CourseDetails");
        }
      const [courses,setCourses]=useState([]);
 

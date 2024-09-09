@@ -18,10 +18,10 @@ return(
   {/* <button className=" my-1 md:text-left hover:text-emerald-500" onClick={() => navigate(-1)}>
                 Go Back 
             </button> */}
+            <div className="bg-slate-100">
 <form class="w-full m-auto max-w-sm">
 
-  <h1 className="ml-44 mb-10 text-green-700">Welcome To our Web Site : <br/>
-  You Should to sign up first
+  <h1 className="ml-30 text-center mb-10 text-green-700">Welcome To our Web Site  You Should to sign up first
   </h1>
   
  
@@ -60,6 +60,7 @@ return(
     </div>
   </div>
 </form>
+</div>
 </> 
 );
 }

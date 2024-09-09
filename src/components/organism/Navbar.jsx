@@ -27,11 +27,12 @@ const navLinks=[
 ]
 function Navbar(){
     return(
+        <div className="flex">
         <div className="flex gap-[260px] items-center py-[18px] mb-10">
            <div className="logo">
             <Link to="/" className="poppins-medium-italic text-[24px]">PalFlex</Link>
             </div>
-            <ul className="flex gap-10">
+            <ul className="flex gap-8">
                 {/* navlink make active class for clicked item */}
             {/* <li><NavLink to="/">home</NavLink></li>
             <li><NavLink to="shop">shop</NavLink></li>
@@ -44,6 +45,7 @@ function Navbar(){
             <NavBarLink to="shop" text="Be a Tutor"/>
             <NavBarLink to="product" text="Search About Tutor"/>
             <NavBarLink to="contactus" text="Contactus"/>
+            
 
             {/* instead of above redudunt code use this array of objects  */}
             {/* {
@@ -51,9 +53,18 @@ function Navbar(){
                 
             } */}
             </ul>
+         
 
            
         </div>
+                <div className="flex items-center px-28 py-[18px] mb-10">
+
+           <ul className="flex gap-10">
+           <NavBarLink to="SignUp" text="Sign UP"/>
+           <NavBarLink to="login" text="Log In"/>
+</ul>
+</div>
+</div>
     )
 }
 const WrappedNavbar=withwrapper(Navbar);

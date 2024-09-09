@@ -2,56 +2,23 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
-import tutor from '../../images/tutor.jpg'
-import { useLayoutEffect } from "react";
-import arrow from '../../images/next.png'
-// import CourseItem from './CourseItem';
-import { BrowserRouter, Routes, Router } from "react-router-dom";
-import { Link } from 'react-router-dom';
-import CourseCard from "./CourseCard";
-export const prod=
-[
-     {
-       "id": "1",
-       "thumbnail": "../../images/img4.jpg",
-       "title": "Wireless Mouse",
-       "price": 25.99
-     },
-     {
-       "id": "2",
-       "thumbnail": "../../images/img4.jpg",
-       "title": "Bluetooth Headphones",
-       "price": 79.99
-     },
-     {
-       "id": "3",
-       "thumbnail": "../../images/img4.jpg",
-       "title": "Laptop Stand",
-       "price": 35.50
-     },
-     {
-       "id": "4",
-       "thumbnail": "../../images/img4.jpg",
-       "title": "Smartphone Charger",
-       "price": 15.00
-     },
-     {
-       "id": "5",
-       "thumbnail": "../../images/img4.jpg",
-       "title": "Portable SSD",
-       "price": 120.00
-     }
-   ]
-  export default function Course(){
+
+
+import CourseCard from "../components/organism/CourseCard";
+
+     
+      
+  export default function CourseDetails(){
      const navigate = useNavigate();
        const gotToNewPage=()=>{
-         navigate("/Sign");
+         navigate("/CourseDetails");
        }
      const [courses,setCourses]=useState([]);
 
    
    const getProducts=async()=>{
      try{
+      // must update api for course details and add parameter (id for selected course)
 // const response=await axios.get('https://dummyjson.com/products');
 const response=await axios.get('https://cors-anywhere.herokuapp.com/http://educational-platform-2024.runasp.net/api/Courses/AllCourses',{mode: 'no-cors'});
 // response.headers( {'Content-Type': 'application/json'});

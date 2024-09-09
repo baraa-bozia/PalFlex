@@ -28,20 +28,7 @@ function SignUpStu() {
     <div className="students-register-container">
       <h2>Student Registration</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="id"
-          placeholder="ID"
-          value={student.id}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="user_id"
-          placeholder="User ID"
-          value={student.user_id}
-          onChange={handleChange}
-        />
+      
         <input
           type="text"
           name="class"

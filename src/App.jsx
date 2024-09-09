@@ -16,6 +16,9 @@ import SignUpStu from "./views/SignUpStu";
 import SignUpTeach from "./views/SignupTeach";
 import Dashboard from "./views/Dashboard";
 import HomeWhenLoggedIn from "./views/HomeWhenLoggedIn";
+import Log from "./views/Log";
+import CourseWhenLogged from "./components/organism/CourseWhenLogged";
+import CourseDetails from "./views/CourseDetails";
 
 function App() {
   return (
@@ -44,10 +47,12 @@ function App() {
           
           ></Route>
         <Route path="Sign" element={<Sign/>}></Route>
+        <Route path="CourseDetails" element={<CourseDetails/>}></Route>
+
         <Route path="homeWhenLogged" element={
           <>
           <HomeWhenLoggedIn/>
-          <Course />
+          <CourseWhenLogged/>
           {/* <Dashboard/> */}
           <Footerr/>
           </>
