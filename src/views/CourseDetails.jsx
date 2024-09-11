@@ -6,7 +6,7 @@ import axios from "axios";
 
 import CourseCard from "../components/organism/CourseCard";
 
-     
+     //اعدلها حسب الاي بي اي
       
   export default function CourseDetails(){
      const navigate = useNavigate();

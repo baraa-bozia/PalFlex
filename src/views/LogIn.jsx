@@ -19,6 +19,9 @@ function LogIn() {
     
         mainLog(logInUrl);
     }
+
+
+    
     const navigate = useNavigate();
 
 const mainLog=async(logInUrl)=>{
@@ -37,6 +40,9 @@ const mainLog=async(logInUrl)=>{
 // console.log('====================================');
 // console.log(json);
 // console.log('====================================');        }
+
+
+
 let res=await fetch(logInUrl, {
     mode: "no-cors" // <----------------
 });
@@ -62,6 +68,9 @@ try{
         console.log("error",error);
     }
 }
+
+
+
 // let result=await fetch(logInUrl, {
 //     mode: "no-cors" // <----------------
 // })

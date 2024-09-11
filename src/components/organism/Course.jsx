@@ -53,7 +53,7 @@ export const prod=
    const getProducts=async()=>{
      try{
 // const response=await axios.get('https://dummyjson.com/products');
-const response=await axios.get('https://cors-anywhere.herokuapp.com/http://educational-platform-2024.runasp.net/api/Courses/AllCourses',{mode: 'no-cors'});
+const response=await axios.get('http://educational-platform-2024.runasp.net/api/Courses/AllCourses');
 // response.headers( {'Content-Type': 'application/json'});
 
 // response.headers('"Access-Control-Allow-Origin", "*"');

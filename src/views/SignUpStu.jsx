@@ -3,8 +3,7 @@ import "../../src/css/Student.css";
 
 function SignUpStu() {
   const [student, setStudent] = useState({
-    id: "",
-    user_id: "",
+    
     class: "",
     academicDegree: "",
     interests: "",
