@@ -19,7 +19,7 @@ import HomeWhenLoggedIn from "./views/HomeWhenLoggedIn";
 import Log from "./views/Log";
 import CourseWhenLogged from "./components/organism/CourseWhenLogged";
 import CourseDetails from "./views/CourseDetails";
-
+import LogInTeacher from "./views/LogInTeacher";
 function App() {
   return (
     <div >
@@ -47,8 +47,8 @@ function App() {
           
           ></Route>
         <Route path="Sign" element={<Sign/>}></Route>
-        <Route path="CourseDetails" element={<CourseDetails/>}></Route>
-
+        <Route path="/CourseDetails/:id" element={<CourseDetails/>}></Route>
+{/* <Route path=""></Route> */}
         <Route path="homeWhenLogged" element={
           <>
           <HomeWhenLoggedIn/>
@@ -60,8 +60,11 @@ function App() {
 
         <Route path="SignUp" element={<SignUp/>}></Route>
         <Route path="login" element={<LogIn/>}></Route>
+        <Route path="loginteacher" element={<LogInTeacher/>}></Route>
+
         <Route path="studentSignUp" element={<SignUpStu/>}></Route>
         <Route path="teacherSignUp" element={<SignUpTeach/>}></Route>
+        <Route path="dashboard" element={<Dashboard/>}></Route>
 
         
         <Route path="product" element={<Product/>}></Route>

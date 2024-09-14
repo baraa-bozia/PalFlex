@@ -13,7 +13,7 @@ export default function HomeWhenLoggedIn() {
     <div>
        <main className="">
         {/* GET NAME FROM API */}
-        <div>Welcome Back Baraa</div>
+        <div className='text-lg'>Welcome Back </div>
         <div className="p-10 flex flex-row space-x-12">
           <img src={img1} className='w-96 h-96'/>
           <img src={img2} className='w-96 h-96'/>

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
@@ -9,6 +9,9 @@ import arrow from '../../images/next.png'
 import { BrowserRouter, Routes, Router } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import CourseCard from "./CourseCard";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../app/features/CourseD";
+import toast from "react-hot-toast";
 export const prod=
 [
      {
@@ -42,18 +45,36 @@ export const prod=
        "price": 120.00
      }
    ]
-  export default function Course(){
+ 
+  export default function Course(course){
+    const {id}=useParams();
      const navigate = useNavigate();
-       const gotToNewPage=()=>{
-         navigate("/CourseDetails");
-       }
+     const dispatch=useDispatch();
+       const  gotToNewPage=async(course)=>{
+        dispatch(addToCart(course));
+       
+        const response1= await axios.get('http://educational-platform-2024.runasp.net/api/Courses/AllCourses');
+// console.log(response1.data[0].iD)
+// for(let i=0;i<response1.data.length;i++){
+  // if(response1.data[i].iD=='3'){
+  // toast.success('clicked'+response1.data[i].iD);
+  
+  // }
+
+
+
+        //  navigate(`/CourseDetails/${id}`);
+      //  }
+      }
      const [courses,setCourses]=useState([]);
 
    
    const getProducts=async()=>{
      try{
+      const response=await axios.get('http://educational-platform-2024.runasp.net/api/Courses/AllCourses');
+
 // const response=await axios.get('https://dummyjson.com/products');
-const response=await axios.get('https://cors-anywhere.herokuapp.com/http://educational-platform-2024.runasp.net/api/Courses/AllCourses',{mode: 'no-cors'});
+// const response=await axios.get(`http://educational-platform-2024.runasp.net/api/CoursesDetails/getCourse/${response1.data.ID}`);
 // response.headers( {'Content-Type': 'application/json'});
 
 // response.headers('"Access-Control-Allow-Origin", "*"');
@@ -68,9 +89,13 @@ setCourses(response.data);
      getProducts();
    },[])
 return(
-     <div onClick={() => gotToNewPage()} className=" text-center grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-8 my-8">
+     <div onClick={() => gotToNewPage(course)} className=" text-center grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-8 my-8">
           {courses.map(course=>
-               <CourseCard course={course} key={course.iD}/>
+          <div>
+          <Link to={`/CourseDetails/${course.iD}`}>
+               <CourseCard  course={course} key={course.iD}/>
+               </Link>
+               </div>
           )}
      </div>
 )

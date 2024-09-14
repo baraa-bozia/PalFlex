@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../src/css/Login.css';
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
 function LogIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,19 +12,19 @@ function LogIn() {
         console.log('Email:', email);
         console.log('Password:', password);
     };
-    function performAction(e){
+    // function performAction(e){
     
    
-        let logInUrl=`http://educational-platform-2024.runasp.net/api/Authentication/login/${email}/${password}?fbclid=IwY2xjawFGxEhleHRuA2FlbQIxMAABHTzQacWcetL5DDc_fVfcTXIPZEM1mu9DbRsnc-ul1GyxPbgzr5glBmPkxA_aem_Pu2pbVF2141QQhgiVGz67w`;
+    //     let logInUrl=`http://educational-platform-2024.runasp.net/api/Authentication/login/${email}/${password}?fbclid=IwY2xjawFGxEhleHRuA2FlbQIxMAABHTzQacWcetL5DDc_fVfcTXIPZEM1mu9DbRsnc-ul1GyxPbgzr5glBmPkxA_aem_Pu2pbVF2141QQhgiVGz67w`;
     
-        mainLog(logInUrl);
-    }
+    //     executeUserRegistration(logInUrl);
+    // }
 
 
     
     const navigate = useNavigate();
 
-const mainLog=async(logInUrl)=>{
+// const mainLog=async(logInUrl)=>{
 
 //     const res=await fetch(logInUrl,
 // {        mode: 'no-cors'
@@ -41,33 +41,54 @@ const mainLog=async(logInUrl)=>{
 // console.log(json);
 // console.log('====================================');        }
 
-
-
-let res=await fetch(logInUrl, {
-    mode: "no-cors" // <----------------
-});
-const data=(await res).json;
-
-try{
-        let dataname=data.name;
-        if(res.status===200){
-            alert('error in user or password');
-        // console.log(data);
- 
-        }
-        else{
-            alert('logged in successfully!');
-            navigate("/homeWhenLogged");
-                    console.log(data);
-
-        }
-        }
-        // console.log(data);
+let executeUserRegistration = async () => {
+      
+    try{
     
-    catch(error){
-        console.log("error",error);
+  
+    var response = await axios.get(`http://educational-platform-2024.runasp.net/api/Authentication/login/${email}/${password}`);
+    console.log(response);
+    // cheack according to email 
+    if(response.data=="Null"){
+        alert('error in email or password!')
+      
+
     }
+    else{
+        alert("logged in successfully");
+        navigate("/HomeWhenLogged");
+  }
 }
+  catch (error) {
+    console.error(error);
+  }
+  };
+
+// let res=await fetch(logInUrl, {
+//     mode: "no-cors" // <----------------
+// });
+// const data=(await res).json;
+
+// try{
+//         let dataname=data.name;
+//         if(res.status===200){
+//             alert('error in user or password');
+//         // console.log(data);
+ 
+//         }
+//         else{
+//             alert('logged in successfully!');
+//             navigate("/homeWhenLogged");
+//                     console.log(data);
+
+//         }
+//         }
+//         // console.log(data);
+    
+//     catch(error){
+//         console.log("error",error);
+//     }
+// }
 
 
 
@@ -142,7 +163,7 @@ try{
                         required
                     />
                 </div>
-                <button onClick={()=>performAction()} type="submit" className="login-button">Login</button>
+                <button onClick={()=>executeUserRegistration()} type="submit" className="login-button">Login</button>
             </form>
         </div>
     );
