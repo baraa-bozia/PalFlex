@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import '../../src/css/Login.css';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../app/features/CourseD";
+import { useEffect } from 'react';
 function LogInTeacher() {
+    const {teacherId}=useParams();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,7 +21,23 @@ function LogInTeacher() {
     };
    
 
+    const dispatch=useDispatch();
+    const  gotToNewPage=async(course)=>{
+     dispatch(addToCart(course));
     
+     const response1= await axios.get('http://educational-platform-2024.runasp.net/api/Courses/AllCourses');
+// console.log(response1.data[0].iD)
+// for(let i=0;i<response1.data.length;i++){
+// if(response1.data[i].iD=='3'){
+// toast.success('clicked'+response1.data[i].iD);
+
+// }
+
+
+
+     //  navigate(`/CourseDetails/${id}`);
+   //  }
+   }
     const navigate = useNavigate();
 
 
@@ -34,14 +57,17 @@ let executeUserRegistration = async () => {
     }
     else{
         alert("logged in successfully");
-        navigate("/dashboard");
+
+        navigate(`/dashboard/${teacherId}`);
   }
 }
   catch (error) {
     console.error(error);
   }
   };
-
+  useEffect(()=>{
+    executeUserRegistration();
+  },[])
 
     return (
         <div className="login-container">

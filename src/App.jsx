@@ -20,6 +20,7 @@ import Log from "./views/Log";
 import CourseWhenLogged from "./components/organism/CourseWhenLogged";
 import CourseDetails from "./views/CourseDetails";
 import LogInTeacher from "./views/LogInTeacher";
+import GoToAddCourse from "./views/GoToAddCourse";
 function App() {
   return (
     <div >
@@ -64,11 +65,12 @@ function App() {
 
         <Route path="studentSignUp" element={<SignUpStu/>}></Route>
         <Route path="teacherSignUp" element={<SignUpTeach/>}></Route>
-        <Route path="dashboard" element={<Dashboard/>}></Route>
+        <Route path="/dashboard/:teacherId" element={<Dashboard/>}></Route>
 
         
         <Route path="product" element={<Product/>}></Route>
         <Route path="contactUs" element={<ContactUs/>}></Route>
+        <Route path="/addCourse/:teacherId" element={<GoToAddCourse/>}></Route>
 
 
       </Routes>

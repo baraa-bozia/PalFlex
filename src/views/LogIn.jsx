@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../../src/css/Login.css';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import DashToEachTeacher from '../components/organism/DashToEachTeacher';
+import { Link } from 'react-router-dom';
 function LogIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -40,6 +42,7 @@ function LogIn() {
 // console.log('====================================');
 // console.log(json);
 // console.log('====================================');        }
+const [courses,setCourses]=useState([]);
 
 let executeUserRegistration = async () => {
       
@@ -51,12 +54,24 @@ let executeUserRegistration = async () => {
     // cheack according to email 
     if(response.data=="Null"){
         alert('error in email or password!')
-      
 
     }
+    else if(response.data[0].user.role=='teacher'){
+        alert("logged in successfully");
+        navigate(`/dashboard/${response.data[0].user.iD}`);
+        // courses.map(course=>
+        //     <div>
+        //     <Link to={`/dashboard/${response.data[0].user.iD}`}>
+        //          <DashToEachTeacher  course={course} key={course.iD}/>
+        //          </Link>
+        //          </div>
+        //     )
+  }
+    
     else{
         alert("logged in successfully");
         navigate("/HomeWhenLogged");
+
   }
 }
   catch (error) {
@@ -164,6 +179,7 @@ let executeUserRegistration = async () => {
                     />
                 </div>
                 <button onClick={()=>executeUserRegistration()} type="submit" className="login-button">Login</button>
+                
             </form>
         </div>
     );

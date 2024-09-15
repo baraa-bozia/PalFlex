@@ -60,9 +60,6 @@ export const prod=
   // toast.success('clicked'+response1.data[i].iD);
   
   // }
-
-
-
         //  navigate(`/CourseDetails/${id}`);
       //  }
       }
