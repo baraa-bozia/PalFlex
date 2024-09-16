@@ -49,10 +49,12 @@ function App() {
           ></Route>
         <Route path="Sign" element={<Sign/>}></Route>
         <Route path="/CourseDetails/:id" element={<CourseDetails/>}></Route>
+        <Route path="/deleteCourse/:idCourse" element={<CourseDetails/>}></Route>
+
 {/* <Route path=""></Route> */}
         <Route path="homeWhenLogged" element={
           <>
-          <HomeWhenLoggedIn/>
+          <HomeWhenLoggedIn />
           <CourseWhenLogged/>
           {/* <Dashboard/> */}
           <Footerr/>
@@ -60,7 +62,7 @@ function App() {
       }></Route>
 
         <Route path="SignUp" element={<SignUp/>}></Route>
-        <Route path="login" element={<LogIn/>}></Route>
+        <Route path="login" element={<LogIn a='hala'/>}></Route>
         <Route path="loginteacher" element={<LogInTeacher/>}></Route>
 
         <Route path="studentSignUp" element={<SignUpStu/>}></Route>

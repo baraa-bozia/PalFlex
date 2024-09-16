@@ -169,7 +169,7 @@ const {teacherId}=useParams();
    
   return (
     <div className="students-register-container">
-      <h2>Student Registration</h2>
+      <h2>Add Course</h2>
       <form onSubmit={handleSubmit}>
       
         <input
@@ -200,7 +200,7 @@ const {teacherId}=useParams();
           value={course.price}
           onChange={handleChange}
         />
-        <button onClick={()=>gotToLogin()} type="submit">Register Student</button>
+        <button onClick={()=>gotToLogin()} type="submit">Add Course</button>
       </form>
     </div>
   );

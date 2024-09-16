@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import DashToEachTeacher from '../components/organism/DashToEachTeacher';
 import { Link } from 'react-router-dom';
-function LogIn() {
+function LogIn(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -43,7 +43,7 @@ function LogIn() {
 // console.log(json);
 // console.log('====================================');        }
 const [courses,setCourses]=useState([]);
-
+let a;
 let executeUserRegistration = async () => {
       
     try{
@@ -58,17 +58,14 @@ let executeUserRegistration = async () => {
     }
     else if(response.data[0].user.role=='teacher'){
         alert("logged in successfully");
+        a=response.data[0].user.name;
         navigate(`/dashboard/${response.data[0].user.iD}`);
-        // courses.map(course=>
-        //     <div>
-        //     <Link to={`/dashboard/${response.data[0].user.iD}`}>
-        //          <DashToEachTeacher  course={course} key={course.iD}/>
-        //          </Link>
-        //          </div>
-        //     )
+      
   }
     
     else{
+        
+        a=response.data[0].user.name;
         alert("logged in successfully");
         navigate("/HomeWhenLogged");
 
@@ -160,6 +157,7 @@ let executeUserRegistration = async () => {
         <div className="login-container">
             <form onSubmit={handleSubmit} className="login-form">
                 <h2>Login</h2>
+                <p>{props.name1}</p>
                 <div className="input-group">
                     <label>Email</label>
                     <input

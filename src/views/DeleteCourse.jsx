@@ -22,7 +22,9 @@ import { Link } from 'react-router-dom';
 import CourseWhenClicked from "../components/organism/CourseWhenClickedd";
 import DashToEachTeacher from '../components/organism/DashToEachTeacher'
 import { wait } from '@testing-library/user-event/dist/utils';
- const Dashboard = () => {
+ const DeleteCourse = () => {
+    const {idCourse}=useParams();
+
   const {teacherId}=useParams();
   const {courseId}=useParams();
 
@@ -99,12 +101,10 @@ console.warn(response2);
           <div key={i}>
           {/* <Link to={`/CourseDetails/${course.iD}`}> */}
           <div className="ml-[480px] mb-[40px]">
-               {/* <DashToEachTeacher course={course} key={teacherId}/> */}
-               <Link to={`/deleteCourse/${course.iD}`}>
-               <DashToEachTeacher  course={course} key={course.iD}/>
-               </Link>
-               <button  className='mr-4 border-gray-300 border-2  text-emerald-100 bg-emerald-800 hover:text-white font-semibold py-2 px-6 border my-1 border-black hover:border-transparent rounded'>Edit</button>
-               <button onClick={()=>goToDeleteCourse(course.iD)} className=' border-gray-300 border-2  hover:text-emerald-100 hover:bg-emerald-800 text-emerald-700 font-semibold py-2 px-4 border my-1 border-black hover:border-transparent rounded'>Delete</button>               </div>
+               <DashToEachTeacher course={course} key={idCourse}/>
+               {/* <button  className='mr-4 border-gray-300 border-2  text-emerald-100 bg-emerald-800 hover:text-white font-semibold py-2 px-6 border my-1 border-black hover:border-transparent rounded'>Edit</button>
+               <button onClick={()=>goToDeleteCourse(course.id)} className=' border-gray-300 border-2  hover:text-emerald-100 hover:bg-emerald-800 text-emerald-700 font-semibold py-2 px-4 border my-1 border-black hover:border-transparent rounded'>Delete</button>    */}
+                           </div>
                
                {/* <CourseWhenClicked></> */}
                {/* </Link> */}
@@ -127,7 +127,7 @@ console.warn(response2);
     </div>
   )
 }
-export default Dashboard;
+export default DeleteCourse;
 
 
 // function Course(props,{setShowNav}) {

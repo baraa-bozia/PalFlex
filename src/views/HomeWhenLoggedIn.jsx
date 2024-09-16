@@ -1,11 +1,12 @@
 import React from 'react'
 // import '../../css/Mainhead.css'; // سنستخدم هذا الملف لتنسيق الواجهة
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import img1 from "../images/img1.jpg";
 import img2 from "../images/img2.jpg"
 import img3 from "../images/img3.jpg"
-export default function HomeWhenLoggedIn() {
+export default function HomeWhenLoggedIn(props) {
     const navigate = useNavigate();
+    const nameOfUser=useParams();
     const gotToNewPage=()=>{
       navigate("/CourseItem"); //اضيف صفحة تفاصيل الكورس هون
     }
@@ -13,7 +14,7 @@ export default function HomeWhenLoggedIn() {
     <div>
        <main className="">
         {/* GET NAME FROM API */}
-        <div className='text-lg'>Welcome Back </div>
+        <div className='text-lg'>{`Welcome Back`} </div>
         <div className="p-10 flex flex-row space-x-12">
           <img src={img1} className='w-96 h-96'/>
           <img src={img2} className='w-96 h-96'/>
