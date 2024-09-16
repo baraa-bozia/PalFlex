@@ -1,106 +1,4 @@
-// import React, { useState } from 'react';
-// import '../../src/css/Login.css';
-// import { useNavigate } from "react-router-dom";
-// import axios from 'axios';
-// import DashToEachTeacher from '../components/organism/DashToEachTeacher';
-// import { Link } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
-// import { useEffect } from 'react';
-// import Course from '../components/organism/Course';
-// function GoToAddCourse() {
-//     const [title, setTitle] = useState('');
-//     const [desc, setDesc] = useState('');
-//     const [status, setStatus] = useState('');
-//     const [price, setPrice] = useState('');
 
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         // هنا تضع الكود الخاص بتسجيل الدخول
-//         // console.log('Email:', email);
-//         // console.log('Password:', password);
-//     };
-
-
-
-    
-//     const navigate = useNavigate();
-
-
-// const [courses,setCourses]=useState([]);
-// const {teacherId}=useParams();
-
-// const executeAdd =async() => {
-      
-//     // try{
-    
-//   await axios.post(`http://educational-platform-2024.runasp.net/api/addCourse/${teacherId}/${title}/${desc}/${status}/${price}`)
-//   .then
-//   ((res)=>setCourses(res.data))
-//     // var response =  axios.get(`http://educational-platform-2024.runasp.net/api/addCourse/${teacherId}/${title}/${desc}/${status}/${price}`);
-//     // console.log(response);
-//     // alert('added successfully')
-//     // /cheack according to email 
-//     // setCourses(response.data);
-// // }
-// //   catch (error) {
-// //     console.error(error);
-// //   }
-//   };
-
-  
-
-//     return (
-//         <div className="login-container">
-//             <form onSubmit={handleSubmit} className="login-form">
-//                 <h2>Add Course</h2>
-//                 {courses.map((obj1,index)=>{
-
-// return(<p>{obj1.title}</p>)
-// })}
-//                 <div className="input-group">
-//                     <label>Name of Course:</label>
-//                     <input
-//                         type="text"
-//                         value={title}
-//                         onChange={(e) => setTitle(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label>Description:</label>
-//                     <input
-//                         type="text"
-//                         value={desc}
-//                         onChange={(e) => setDesc(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label>Status:</label>
-//                     <input
-//                         type="text"
-//                         value={status}
-//                         onChange={(e) => setStatus(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 <div className="input-group">
-//                     <label>Price:</label>
-//                     <input
-//                         type="text"
-//                         value={price}
-//                         onChange={(e) => setPrice(e.target.value)}
-//                         required
-//                     />
-//                 </div>
-//                 <button onClick={()=>executeAdd()} type="submit" className="login-button">Add</button>
-                
-//             </form>
-//         </div>
-//     );
-// }
-
-// export default GoToAddCourse;
 
 
 import React, { useState } from "react";
@@ -145,8 +43,15 @@ const {teacherId}=useParams();
         try{
    
     //update id++++++++++
+    var response2 = await axios.get(`http://educational-platform-2024.runasp.net/api/Dashborad/getCoursesTeacher/${teacherId}`);
+
           var response1 = await axios.get(`http://educational-platform-2024.runasp.net/api/Dashborad/addCourse/${teacherId}/${course.title}/${course.desc}/${course.status}/${course.price}`);
           console.log(response1);
+//           if(response2.data=='Null'){
+// setCourse(response1.data);
+// alert('Course Added')
+
+//           }
         // cheack according to email 
         alert('Course Added')
         // if(response1.data=='Null'){

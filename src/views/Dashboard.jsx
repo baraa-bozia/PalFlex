@@ -51,13 +51,7 @@ setCourses(courses.filter((course)=>{
 alert('deleted')
 console.warn(response2);
 
-// await fetch(`http://educational-platform-2024.runasp.net/api/Dashborad/deleteCourse/${cId}`,{method:"DELETE"})
-// .then(()=>{
-// return setCourses(courses.filter(course=>
-//    course.cId !== cId
-// ))
 
-// })
 };
   const getProducts=async()=>{
         let response1;
@@ -68,11 +62,13 @@ console.warn(response2);
            console.log(response1.data)
     if(response1.data=='Null'){
       alert('there is not courses added yet!'+' You can add now')
+      // goToAddCourse();
     }
           // }
           // console.log(response1.data)
           else{
     setCourses(response1.data);
+
           }
          }  
             catch (error) {
@@ -130,38 +126,7 @@ console.warn(response2);
 export default Dashboard;
 
 
-// function Course(props,{setShowNav}) {
 
-// import React from 'react'; 
-// import 'bootstrap/dist/css/bootstrap.css'; 
-// import Row from 'react-bootstrap/Row';
-// import arrow from '../images/next.png'
-// function CourseItem(props) {
-//   return (
-//     <>
-//      {/* <div className='flex box-content hover:space-x-8 px-[10px] py-[30px] border-solid border-2 border-red-100  rounded-lg mt-4 mx-3 shadow-xl '> */}
-//     {/* <div className='box-border hover:space-x-11 hover:shadow-2xl hover:bg-emerald-500 px-[10px] py-[10px] h-47 w-48 my-4 mx-4 p-10 border-4 flex rounded-lg shadow-xl space-x-6'>
-//       <h3 className='hover:text-emerald-100 '>{props.name}</h3>
-      
-    
-//       <img src={arrow} style={{width:'40px'}}/>
-//     </div>  */}
- 
-//     {/* <div>{props.desc}</div> */}
-//     <div>hiiiiiii</div>
-//     </>
-//   );
-// }
-
-
-// export default CourseItem;
-
-
-// const CourseItem = () => {
-//   return <h1>Blog Articles</h1>;
-// };
-
-// export default CourseItem;import React from 'react';
 
 
 

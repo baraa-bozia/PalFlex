@@ -30,9 +30,9 @@ function Navbar(){
         <div className="flex">
         <div className="flex gap-[260px] items-center py-[18px] mb-10">
            <div className="logo">
-            <Link to="/" className="poppins-medium-italic text-[24px]">PalFlex</Link>
+            <Link to="/" className="poppins-medium-italic text-[24px] ml-20">PalFlex</Link>
             </div>
-            <ul className="flex gap-8">
+            <ul className="flex gap-10">
                 {/* navlink make active class for clicked item */}
             {/* <li><NavLink to="/">home</NavLink></li>
             <li><NavLink to="shop">shop</NavLink></li>
@@ -42,9 +42,9 @@ function Navbar(){
 
 
             <NavBarLink to="/" text="Home"/>
-            <NavBarLink to="shop" text="Be a Tutor"/>
-            <NavBarLink to="product" text="Search About Tutor"/>
-            <NavBarLink to="contactus" text="Contactus"/>
+            {/* <NavBarLink to="shop" text="Be a Tutor"/> */}
+            {/* <NavBarLink to="product" text="Search About Tutor"/> */}
+            <NavBarLink to="contactus" text="Aboutus"/>
             
 
             {/* instead of above redudunt code use this array of objects  */}
@@ -57,7 +57,7 @@ function Navbar(){
 
            
         </div>
-                <div className="flex items-center px-28 py-[18px] mb-10">
+                <div className="flex items-center px-52 py-[18px] mb-10">
 
            <ul className="flex gap-10">
            <NavBarLink to="SignUp" text="Sign UP"/>

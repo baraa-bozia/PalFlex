@@ -21,6 +21,7 @@ import CourseWhenLogged from "./components/organism/CourseWhenLogged";
 import CourseDetails from "./views/CourseDetails";
 import LogInTeacher from "./views/LogInTeacher";
 import GoToAddCourse from "./views/GoToAddCourse";
+import DeleteCourse from "./views/DeleteCourse";
 function App() {
   return (
     <div >
@@ -49,7 +50,7 @@ function App() {
           ></Route>
         <Route path="Sign" element={<Sign/>}></Route>
         <Route path="/CourseDetails/:id" element={<CourseDetails/>}></Route>
-        <Route path="/deleteCourse/:idCourse" element={<CourseDetails/>}></Route>
+        <Route path="/deleteCourse/:idCourse" element={<DeleteCourse/>}></Route>
 
 {/* <Route path=""></Route> */}
         <Route path="homeWhenLogged" element={
@@ -63,7 +64,7 @@ function App() {
 
         <Route path="SignUp" element={<SignUp/>}></Route>
         <Route path="login" element={<LogIn a='hala'/>}></Route>
-        <Route path="loginteacher" element={<LogInTeacher/>}></Route>
+        {/* <Route path="loginteacher" element={<LogInTeacher/>}></Route> */}
 
         <Route path="studentSignUp" element={<SignUpStu/>}></Route>
         <Route path="teacherSignUp" element={<SignUpTeach/>}></Route>
