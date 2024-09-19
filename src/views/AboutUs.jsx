@@ -1,8 +1,8 @@
 import React from "react";
-export default function ContactUs(){
+export default function AboutUs(){
     return(
         <div>
-      ContactUs
+      AboutUs
       </div>
     )
 }

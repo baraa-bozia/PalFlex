@@ -22,6 +22,7 @@ import CourseDetails from "./views/CourseDetails";
 import LogInTeacher from "./views/LogInTeacher";
 import GoToAddCourse from "./views/GoToAddCourse";
 import DeleteCourse from "./views/DeleteCourse";
+import AboutUs from "./views/AboutUs";
 function App() {
   return (
     <div >
@@ -73,6 +74,8 @@ function App() {
         
         <Route path="product" element={<Product/>}></Route>
         <Route path="contactUs" element={<ContactUs/>}></Route>
+        <Route path="aboutUs" element={<AboutUs/>}></Route>
+
         <Route path="/addCourse/:teacherId" element={<GoToAddCourse/>}></Route>
 
 
