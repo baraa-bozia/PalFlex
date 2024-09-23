@@ -86,6 +86,9 @@ setCourses(response.data);
      getProducts();
    },[])
 return(
+  <dvi>
+  <div className='mt-20 text-black-600 text-2xl text-center'>Our Cources</div>
+
      <div onClick={() => gotToNewPage(course)} className=" text-center grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-8 my-8">
           {courses.map(course=>
           <div>
@@ -95,6 +98,7 @@ return(
                </div>
           )}
      </div>
+     </dvi>
 )
    
 }

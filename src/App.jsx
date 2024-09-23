@@ -23,12 +23,25 @@ import LogInTeacher from "./views/LogInTeacher";
 import GoToAddCourse from "./views/GoToAddCourse";
 import DeleteCourse from "./views/DeleteCourse";
 import AboutUs from "./views/AboutUs";
+import "./App.css";
+import styled from "styled-components";
+import { AccountBox } from "./components/accountBox";
+
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 function App() {
   return (
     <div >
-    
+       {/* <AppContainer>
+      <AccountBox />
+    </AppContainer> */}
             <WrappedNavbar/>
-
       {/* <RouterProvider router={router} /> */}
       {/* version 5 */}
       <Routes>
@@ -64,6 +77,9 @@ function App() {
       }></Route>
 
         <Route path="SignUp" element={<SignUp/>}></Route>
+        {/* <Route path="SignUp" element={ <AppContainer>
+      <AccountBox />
+    </AppContainer>}></Route> */}
         <Route path="login" element={<LogIn a='hala'/>}></Route>
         {/* <Route path="loginteacher" element={<LogInTeacher/>}></Route> */}
 

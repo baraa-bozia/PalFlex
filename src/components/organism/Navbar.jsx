@@ -65,8 +65,8 @@ function Navbar(){
                 <div className="flex items-center px-80 py-[10px] mb-8">
 
            <ul className="flex mr-[-160px] gap-10">
-          <button className=" border-orange-400 hover:text-orange-400 hover:bg-slate-100 border rounded px-1 "> <NavBarLink to="SignUp" text="Sign UP"/></button>
-          <button className="bg-orange-400 text-cyan-50 p-1  hover:text-orange-400 hover:bg-slate-100 px-2 font-semibold border  border-black  hover:border-black rounded"> <NavBarLink to="login" text="Log In"/></button>
+          <button className="transition ease-in 50ms border-orange-400 hover:text-orange-400 hover:bg-slate-100 border rounded px-1 "> <NavBarLink to="SignUp" text="Sign UP"/></button>
+          <button className=" transition ease-in 50ms bg-orange-400 text-cyan-50 p-1  hover:text-orange-400 hover:bg-slate-100 px-2 font-semibold border  border-black  hover:border-black rounded"> <NavBarLink to="login" text="Log In"/></button>
 </ul>
 </div>
 </div>

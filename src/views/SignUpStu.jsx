@@ -61,7 +61,7 @@ function SignUpStu(props) {
       }
    
   return (
-    <div className="students-register-container">
+    <div className="teachers-register-container">
       <h2>Student Registration</h2>
       <form onSubmit={handleSubmit}>
       
@@ -86,7 +86,7 @@ function SignUpStu(props) {
           value={student.interests}
           onChange={handleChange}
         />
-        <button onClick={()=>gotToLogin()} type="submit">Register Student</button>
+        <button className="w-28 mt-4 bg-orange-300 border rounded" onClick={()=>gotToLogin()} type="submit">Register Student</button>
       </form>
     </div>
   );

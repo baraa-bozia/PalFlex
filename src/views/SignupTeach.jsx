@@ -89,7 +89,7 @@ function SignUpTeach() {
           value={teacher.birthdate}
           onChange={handleChange}
         />
-        <button onClick={()=>gotToLogin()} type="submit">Register Teacher</button>
+        <button className="w-28 mt-4 bg-orange-300 border rounded" onClick={()=>gotToLogin()} type="submit">Register Teacher</button>
       </form>
     </div>
   );

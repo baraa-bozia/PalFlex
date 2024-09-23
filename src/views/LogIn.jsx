@@ -154,11 +154,13 @@ let executeUserRegistration = async () => {
 
 
     return (
-        <div className="login-container">
-            <form onSubmit={handleSubmit} className="login-form">
-                <h2>Login</h2>
+        <div className="teachers-register-container">
+            <form onSubmit={handleSubmit} >
+                {/* <h2>Login</h2> */}
+                <h2>Welcome Back</h2>
+                <h5 className='mb-3'>Please sign-in to continue!</h5>
                 <p>{props.name1}</p>
-                <div className="input-group">
+                <div >
                     <label>Email</label>
                     <input
                         type="email"
@@ -167,7 +169,7 @@ let executeUserRegistration = async () => {
                         required
                     />
                 </div>
-                <div className="input-group">
+                <div>
                     <label>Password</label>
                     <input
                         type="password"
@@ -176,7 +178,7 @@ let executeUserRegistration = async () => {
                         required
                     />
                 </div>
-                <button onClick={()=>executeUserRegistration()} type="submit" className="login-button">Login</button>
+                <button className="w-28 mt-4 bg-orange-300 border rounded" onClick={()=>executeUserRegistration()} type="submit" >Login</button>
                 
             </form>
         </div>

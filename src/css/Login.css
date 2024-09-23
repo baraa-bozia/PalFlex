@@ -42,7 +42,7 @@
 .login-button {
     width: 100%;
     padding: 10px;
-    background-color: #20c997; /* لون الزر الأخضر */
+    /* background-color: #20c997; لون الزر الأخضر */
     color: #ffffff;
     border: none;
     border-radius: 4px;

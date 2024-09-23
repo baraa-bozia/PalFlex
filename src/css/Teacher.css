@@ -3,10 +3,11 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #f1e9da;
     border-radius: 10px;
-    width: 300px;
+    width: 320px;
     margin: 0 auto;
+    background-image: url('../images/image6.avif');
   }
   
   .teachers-register-container h2 {
@@ -25,7 +26,7 @@
   .teachers-register-container button {
     padding: 10px;
     width: 100%;
-    background-color: #4caf50;
+    /* background-color: rgb(196, 130, 8); */
     color: white;
     border: none;
     border-radius: 5px;
@@ -33,6 +34,8 @@
   }
   
   .teachers-register-container button:hover {
-    background-color: #45a049;
+    background-color: #fff;
+    color:rgb(211, 144, 21);
+    border: #333 solid 0.4px;
   }
   

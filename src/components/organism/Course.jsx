@@ -45,7 +45,8 @@ export const prod=
   export default function Course(){
      const navigate = useNavigate();
        const gotToNewPage=()=>{
-         navigate("/Sign");
+        //  navigate("/Sign");
+        alert('you should sign up or log in first!')
        }
      const [courses,setCourses]=useState([]);
 
@@ -70,7 +71,7 @@ setCourses(response.data);
 return(
   <>
 <div className='mt-20 text-black-600 text-2xl text-center'>Our Cources</div>
-<div id="cc" onClick={() => gotToNewPage()} className=" text-center grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-8 my-8">
+<div id="cc" onClick={() => gotToNewPage()} className=" text-left grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-8 my-8">
           {courses.map(course=>
                <CourseCard course={course} key={course.iD}/>
           )}
