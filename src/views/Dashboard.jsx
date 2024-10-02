@@ -1,15 +1,11 @@
 import React from 'react'
-// import '../../css/Mainhead.css'; // سنستخدم هذا الملف لتنسيق الواجهة
 import { useNavigate } from "react-router-dom";
-// // import { useNavigate } from "react-router-dom";
-// // import React, { useEffect, useState } from 'react'
-// // import axios from "axios";
+
 
 import { useParams } from "react-router";
 
 
 
-// import { useNavigate, useParams } from "react-router-dom";
 import  { useEffect, useState } from 'react'
 import axios from "axios";
 
@@ -31,6 +27,26 @@ import { wait } from '@testing-library/user-event/dist/utils';
 const goToAddCourse=()=>{
 navigate(`/addCourse/${teacherId}`);
 }
+const [course, setCourse] = useState({
+    
+  title: "",
+  desc: "",
+  status: "",
+  price: "",
+ 
+});
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setCourse((prevState) => ({
+    ...prevState,
+    [name]: value,
+  }));
+};
+const handleSubmit = (e) => {
+  e.preventDefault();
+  // Handle form submission logic here
+  console.log(course);
+};
 const deleteCourse=(id)=>{
   const newitem=courses.filter((item) => item.id !== id);
   setCourses(newitem);
@@ -49,10 +65,19 @@ setCourses(courses.filter((course)=>{
   return course.cId !== cId;
 }))
 alert('deleted')
+// navigate(`/dashboard/${teacherId}`)
 console.warn(response2);
 
 
 };
+// const goToEditCourse=async(cId)=>{
+//   let param={
+//       id:cId,
+//     }
+// navigate(`/updateCourse/${param.id}`);
+
+
+// };
   const getProducts=async()=>{
         let response1;
          try{
@@ -62,6 +87,7 @@ console.warn(response2);
            console.log(response1.data)
     if(response1.data=='Null'){
       alert('there is not courses added yet!'+' You can add now')
+
       // goToAddCourse();
     }
           // }
@@ -85,22 +111,23 @@ console.warn(response2);
         <div className="p-10">
           <h1 className=' text-center text-2xl'> Dashboard </h1>
         </div>
-        <div className=' text-center p-20 pt-2 h-10 bg-gray-400'>
+        <div className=' text-center p-20 pt-2 h-10 bg-lime-200'>
          <h1 className='text-xl mt-4'>  All my cources on the platform</h1>
         </div>
 <div className='mt-20 text-gray-600 text-2xl'>
 <h1 className="text-center font-bold text-lg mb-[10px]">Course Details</h1>
 
 {courses.map((course,i)=>
-          <div key={i}>
+          <div className=''  key={i}>
           {/* <Link to={`/CourseDetails/${course.iD}`}> */}
-          <div className="ml-[480px] mb-[40px]">
+          <div className="ml-[480px] mb-[40px] ">
                {/* <DashToEachTeacher course={course} key={teacherId}/> */}
-               <Link to={`/deleteCourse/${course.iD}`}>
-               <DashToEachTeacher  course={course} key={course.iD}/>
-               </Link>
-               <button  className='mr-4 border-gray-300 border-2  text-emerald-100 bg-emerald-800 hover:text-white font-semibold py-2 px-6 border my-1 border-black hover:border-transparent rounded'>Edit</button>
-               <button onClick={()=>goToDeleteCourse(course.iD)} className=' border-gray-300 border-2  hover:text-emerald-100 hover:bg-emerald-800 text-emerald-700 font-semibold py-2 px-4 border my-1 border-black hover:border-transparent rounded'>Delete</button>               </div>
+               {/* <Link to={`/deleteCourse/${course.iD}`}> */}
+               <DashToEachTeacher  course={course}  key={course.iD}/>
+               
+               {/* </Link> */}
+               {/* <button onClick={()=>goToEditCourse(course.iD)}  className='mr-4 border-gray-300 border-2  text-emerald-100 bg-orange-600 hover:text-white font-semibold py-2 px-6 border my-1 border-black hover:border-transparent rounded'>Edit</button> */}
+               <button onClick={()=>goToDeleteCourse(course.iD)} className=' border-gray-300 border-2  hover:text-emerald-100 hover:bg-orange-600 text-orange-600 font-semibold py-2 px-4 border my-1 border-black hover:border-transparent rounded'>Delete</button>               </div>
                
                {/* <CourseWhenClicked></> */}
                {/* </Link> */}
@@ -114,8 +141,8 @@ console.warn(response2);
 
 
 </div>
-<div className='mt-10 text-center p-20 pt-6 h-10 bg-gray-400'>
-<button onClick={()=>goToAddCourse()} className='mb-10 border-gray-300 border-2  hover:text-emerald-100 hover:bg-emerald-800 text-white font-semibold py-2 px-20 border my-1 border-black hover:border-transparent rounded'>
+<div className='mt-10 text-center p-20 pt-6 h-10 bg-lime-200'>
+<button onClick={()=>goToAddCourse()} className='mb-10 border-black-300 border-2  hover:text-emerald-100 hover:bg-orange-600 text-black font-semibold py-2 px-20 border my-1 border-[0.4px] border-black hover:border-transparent rounded'>
     Add Course
     </button>
     </div>

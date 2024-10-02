@@ -173,10 +173,10 @@ let id;
    
   </div> */}
   <div className="flex flex-row mt-[-14px]">
-<div className="text-gray-300 mt-6">Role:</div>
+<div className="text-gray-700 mt-6">Role:</div>
   <div className="md:flex md:items-center">
     {/* <div className="md:w-1/3"></div> */}
-    <div className="w-28 m-4 bg-orange-300 border rounded">
+    <div className="w-28 m-4 bg-orange-400 border rounded">
       <button onClick={() => gotToTeacher()}  type="button">
       {/* shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded */}
         Teacher
@@ -186,7 +186,7 @@ let id;
 
   <div className="md:flex md:items-center">
     {/* <div className="md:w-1/3"></div> */}
-    <div className="w-28 bg-orange-300 border rounded">
+    <div className="w-28 bg-orange-400 border rounded">
       <button onClick={() => gotToStudent()} type="button">
       {/* shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded */}
 Student      </button>
@@ -197,7 +197,7 @@ Student      </button>
         <div className="text-gray-300 mb-2">Already Have an Acount?</div>  
           <div className="md:flex md:items-center">
     {/* <div className="md:w-1/3"></div> */}
-    <div className="w-72 bg-orange-300 border rounded">
+    <div className="w-72 bg-orange-400 border rounded">
       <button onClick={() => gotToLogin()} 
  type="button">
       {/* shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded */}

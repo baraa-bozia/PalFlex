@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@heroicons/react": "^2.1.5",
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -12,12 +14,14 @@
     "cors": "^2.8.5",
     "framer-motion": "^11.5.6",
     "react": "^18.3.1",
+    "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-redux": "^9.1.2",
     "react-router": "^6.25.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
+    "reactstrap": "^9.2.3",
     "styled-components": "^6.1.13",
     "testing-library": "^0.0.2",
     "web-vitals": "^2.1.4"

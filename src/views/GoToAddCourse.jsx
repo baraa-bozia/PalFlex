@@ -54,6 +54,9 @@ const {teacherId}=useParams();
 //           }
         // cheack according to email 
         alert('Course Added')
+        // setCourse(response1.data);
+
+        navigate(`/dashboard/${teacherId}`)
         // if(response1.data=='Null'){
         //     alert('there is not courses added yet!'+' You can add now')
         //   }
@@ -73,40 +76,49 @@ const {teacherId}=useParams();
       }
    
   return (
-    <div className="students-register-container">
+    <div className="bg-lime-200 p-40">
+    <div className=" justify-center text-center p-4 bg-lime-100 w-[500px] h-[400px] justify-center  m-auto ">
       <h2>Add Course</h2>
-      <form onSubmit={handleSubmit}>
-      
-        <input
+      <form onSubmit={handleSubmit} className="flex flex-col p-4">
+      <div className="pb-4">
+        <input className="w-60 p-2"
           type="text"
           name="title"
           placeholder="Title"
           value={course.title}
           onChange={handleChange}
         />
-        <input
+        </div>
+        <div className="pb-4">
+        <input className="w-60 p-2"
           type="text"
           name="desc"
           placeholder="Description"
           value={course.desc}
           onChange={handleChange}
         />
-        <input
+        </div>
+        <div className="pb-4">
+        <input className="w-60 p-2"
           type="text"
           name="status"
           placeholder="Status"
           value={course.status}
           onChange={handleChange}
         />
-        <input
+        </div>
+        <div className="pb-4">
+        <input className="w-60 p-2"
           type="text"
           name="price"
           placeholder="Price"
           value={course.price}
           onChange={handleChange}
         />
-        <button onClick={()=>gotToLogin()} type="submit">Add Course</button>
+        </div>
+        <button className="m-auto p-2 mt-5 w-28 bg-orange-400 font-bold text-slate-50 hover:bg-slate-100 hover:text-orange-400  border-black border-[0.4px] rounded" onClick={()=>gotToLogin()} type="submit">Add Course</button>
       </form>
+    </div>
     </div>
   );
 }

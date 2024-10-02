@@ -3,8 +3,6 @@ import WrappedNavbar from "./components/organism/Navbar";
 import {BrowserRouter, Route, RouterProvider, Routes} from 'react-router-dom';
 import {router} from './router/index'
 import Home from "./views/Home";
-import Shop from "./views/Shop";
-import Product from "./views/Product";
 import ContactUs from "./views/ContactUs";
 import Mainhead from "./components/organism/Mainhead";
 import  Course  from "./components/organism/Course";
@@ -25,7 +23,8 @@ import DeleteCourse from "./views/DeleteCourse";
 import AboutUs from "./views/AboutUs";
 import "./App.css";
 import styled from "styled-components";
-import { AccountBox } from "./components/accountBox";
+import { useEffect, useState } from "react";
+import Cart from "./views/Cart";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -36,28 +35,30 @@ const AppContainer = styled.div`
   justify-content: center;
 `;
 function App() {
+const[isUserLoggedIn,setUserLoggedIn]=useState(false);
+const userAuth=()=>{
+  setUserLoggedIn(!isUserLoggedIn);
+}
+  let [navFlag,setNavFlag]=useState(false);
+  const[hideNav,sethideNav]=useState(true);
+
+ 
   return (
     <div >
-       {/* <AppContainer>
-      <AccountBox />
-    </AppContainer> */}
-            <WrappedNavbar/>
-      {/* <RouterProvider router={router} /> */}
-      {/* version 5 */}
+       
+<Navbar isUserLoggedIn={isUserLoggedIn} userAuth={userAuth}/>
+
+            
+      
       <Routes>
         <Route path="/" element={
           <>
-          <Mainhead/>
-          <Course />
-          {/* <Dashboard/> */}
-          <Footerr/>
-          {/* <Course name='html'/>
-          <Course name='js'/>
-          <Course name='js'/>
-          <Course name='js'/>
-          <Course name='js'/> */}
+                     
 
-          {/* <CourseItem/> */}
+          <Mainhead text={'false'}/>
+          <Course />
+          <Footerr/>
+          
           </>
         }
           
@@ -66,10 +67,14 @@ function App() {
         <Route path="/CourseDetails/:id" element={<CourseDetails/>}></Route>
         <Route path="/deleteCourse/:idCourse" element={<DeleteCourse/>}></Route>
 
-{/* <Route path=""></Route> */}
+
         <Route path="homeWhenLogged" element={
           <>
-          <HomeWhenLoggedIn />
+          
+
+
+          
+          <HomeWhenLoggedIn isUserLoggedIn={true} userAuth={userAuth} />
           <CourseWhenLogged/>
           {/* <Dashboard/> */}
           <Footerr/>
@@ -77,20 +82,22 @@ function App() {
       }></Route>
 
         <Route path="SignUp" element={<SignUp/>}></Route>
-        {/* <Route path="SignUp" element={ <AppContainer>
-      <AccountBox />
-    </AppContainer>}></Route> */}
-        <Route path="login" element={<LogIn a='hala'/>}></Route>
-        {/* <Route path="loginteacher" element={<LogInTeacher/>}></Route> */}
+      
+        <Route path="login" element={<>
+
+          <LogIn a='hala'/>
+                            </>
+
+      }></Route>
 
         <Route path="studentSignUp" element={<SignUpStu/>}></Route>
         <Route path="teacherSignUp" element={<SignUpTeach/>}></Route>
         <Route path="/dashboard/:teacherId" element={<Dashboard/>}></Route>
 
         
-        <Route path="product" element={<Product/>}></Route>
         <Route path="contactUs" element={<ContactUs/>}></Route>
         <Route path="aboutUs" element={<AboutUs/>}></Route>
+        <Route path="cart" element={<Cart/>}></Route>
 
         <Route path="/addCourse/:teacherId" element={<GoToAddCourse/>}></Route>
 

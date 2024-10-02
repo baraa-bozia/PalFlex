@@ -5,6 +5,8 @@ import img1 from "../images/image1.avif";
 import img2 from "../images/image2.jpg"
 import img3 from "../images/image3.jpg"
 export default function HomeWhenLoggedIn(props) {
+  const {isUserLoggedIn,userAuth}=props;
+
     const navigate = useNavigate();
     const nameOfUser=useParams();
     const gotToNewPage=()=>{
@@ -13,9 +15,14 @@ export default function HomeWhenLoggedIn(props) {
   return (
     
        <div>
-       <main className="bg-orange-100">
+        {/* {userAuth(props.isUserLoggedIn)} */}
+        {/* {userAuth()} */}
+        <main className="bg-orange-100">
        <div className='flex flex-row ml-44'>
-        <div>
+        <div> 
+          {/* بدي افحص هاي القيمة ف صفحة الناف بار اذا كانت ترو اعرض لوج اوت */}
+          <p id='new'>{props.text}</p>
+          
        <h1 className='pb-10 mt-10 text-left text-xl mr-96 ' > Start your<br/><span className='text-orange-400'> educational</span> <br/>  journey   with us </h1>
        <p className='w-80'>The primary goal of education should be empowering individuals to be successful in life. Secondary goals include establishing values, 
         social skills, and work ethic. A good education system produces good citizens who are well-educated, well-mannered and disciplined

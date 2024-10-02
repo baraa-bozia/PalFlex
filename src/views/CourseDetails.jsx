@@ -1,22 +1,19 @@
-// // import { useNavigate } from "react-router-dom";
-// // import React, { useEffect, useState } from 'react'
-// // import axios from "axios";
+
 
 import { useParams } from "react-router";
 
 
 
-// import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
 
-// // import CourseItem from './CourseItem';
-// import { BrowserRouter, Routes, Router } from "react-router-dom";
-// import { Link } from 'react-router-dom';
+
 import CourseCard from "../components/organism/CourseCard";
 
 import CourseWhenClicked from "../components/organism/CourseWhenClickedd";
+import { useDispatch } from "react-redux";
+import { addCourse } from "../app/features/CourseD";
 // import CourseWhenClickedd from "../components/organism/CourseWhenClickedd";
 
 
@@ -45,15 +42,15 @@ import CourseWhenClicked from "../components/organism/CourseWhenClickedd";
            getProducts();
          },[])
     return (  
-      <div> 
+      <div className="bg-yellow-100"> 
         {/* CourseDetails {id} */}
        {courses.map(course=>
           <div >
-            <h1 className="text-center font-bold text-lg mb-[10px]">Course Details</h1>
+            <h1 className="text-center font-bold text-lg mb-[20px]">Course Details</h1>
           {/* <Link to={`/CourseDetails/${course.iD}`}> */}
           <div className="ml-[280px] mb-[40px]">
                <CourseWhenClicked course={course} key={id}/>
-               <button className="mt-[20px]  border-gray-300 border-2     hover:text-emerald-100 hover:bg-emerald-400 text-green-700 font-semibold py-2 px-20 border my-1 border-black hover:border-transparent rounded">Join</button>
+               {/* <button onClick={()=>handleAddCourse(course)} className="ml-52 mt-[20px] w-28 mt-4 bg-orange-400 font-bold text-slate-50 hover:bg-slate-100 hover:text-orange-400  border-black border-[0.4px] rounded">Join</button> */}
                </div>
                
                {/* <CourseWhenClicked></> */}

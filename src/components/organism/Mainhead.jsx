@@ -5,7 +5,7 @@ import img1 from "../../images/image1.avif";
 import img2 from "../../images/image2.jpg"
 import img3 from "../../images/image3.jpg"
 import { useState } from 'react';
-export default function Mainhead() {
+export default function Mainhead(props) {
     const navigate = useNavigate();
     // const [readMore,setReadMore]=useState(false);
     // let more =document.getElementById('more');
@@ -14,6 +14,8 @@ export default function Mainhead() {
       navigate("/Sign");
     }
    let x;
+   const {isUserLoggedIn,userAuth}=props;
+
     const readMore1=()=>{
        // setBl(!bl);
       // setReadMore(!readMore);
@@ -62,6 +64,9 @@ export default function Mainhead() {
        <main className="bg-orange-100">
        <div className='flex flex-row ml-44'>
         <div>
+        {/* <p id='logg'>{props.text}</p> */}
+        {()=>userAuth()}
+
        <h1 className='pb-10 mt-10 text-left text-xl mr-96 ' > Start your<br/><span className='text-orange-400'> educational</span> <br/>  journey   with us </h1>
        <p className='w-80'>The primary goal of education should be empowering individuals to be successful in life. Secondary goals include establishing values, 
         social skills, and work ethic. A good education system produces good citizens who are well-educated, well-mannered and disciplined
@@ -73,11 +78,7 @@ export default function Mainhead() {
           A good education system makes the people of the country more responsible and knowledgeable.
           </span>
           
-        {/* {x=(document.getElementById('more'))} */}
-        {/* // احذف الريد مور اذا ما زبط  */}
          </p>
-         {/* <button id='myBtn' className='text-orange-400' onClick={()=>readMore1()}>{readMore?'Read Less << ':'Read More >>'  }</button> */}
-         <button id='myBtn' className='text-orange-400' onClick={()=>readMore1()}>Read More</button>
 
          </div>
         <div className="p-10 flex flex-row space-x-12">
@@ -88,7 +89,6 @@ export default function Mainhead() {
           <img src={img2} className='rounded border w-60 h-[500px]'/>
 
 
-          {/* <button onClick={() => gotToNewPage()} className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'> Start</button> */}
         </div>
 </div>
        
@@ -99,38 +99,7 @@ export default function Mainhead() {
 
 
 
-// function Course(props,{setShowNav}) {
 
-// import React from 'react'; 
-// import 'bootstrap/dist/css/bootstrap.css'; 
-// import Row from 'react-bootstrap/Row';
-// import arrow from '../images/next.png'
-// function CourseItem(props) {
-//   return (
-//     <>
-//      {/* <div className='flex box-content hover:space-x-8 px-[10px] py-[30px] border-solid border-2 border-red-100  rounded-lg mt-4 mx-3 shadow-xl '> */}
-//     {/* <div className='box-border hover:space-x-11 hover:shadow-2xl hover:bg-emerald-500 px-[10px] py-[10px] h-47 w-48 my-4 mx-4 p-10 border-4 flex rounded-lg shadow-xl space-x-6'>
-//       <h3 className='hover:text-emerald-100 '>{props.name}</h3>
-      
-    
-//       <img src={arrow} style={{width:'40px'}}/>
-//     </div>  */}
- 
-//     {/* <div>{props.desc}</div> */}
-//     <div>hiiiiiii</div>
-//     </>
-//   );
-// }
-
-
-// export default CourseItem;
-
-
-// const CourseItem = () => {
-//   return <h1>Blog Articles</h1>;
-// };
-
-// export default CourseItem;import React from 'react';
 
 
 

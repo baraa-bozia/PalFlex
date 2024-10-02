@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import DashToEachTeacher from '../components/organism/DashToEachTeacher';
 import { Link } from 'react-router-dom';
+import HomeWhenLoggedIn from './HomeWhenLoggedIn';
 function LogIn(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -44,6 +45,8 @@ function LogIn(props) {
 // console.log('====================================');        }
 const [courses,setCourses]=useState([]);
 let a;
+// const {isUserLoggedIn,userAuth}=props;
+
 let executeUserRegistration = async () => {
       
     try{
@@ -56,7 +59,7 @@ let executeUserRegistration = async () => {
         alert('error in email or password!')
 
     }
-    else if(response.data[0].user.role=='teacher'){
+    else if(response.data[0].user.role=='teacher' || response.data[0].user.role=='Teacher'){
         alert("logged in successfully");
         a=response.data[0].user.name;
         navigate(`/dashboard/${response.data[0].user.iD}`);
@@ -68,6 +71,9 @@ let executeUserRegistration = async () => {
         a=response.data[0].user.name;
         alert("logged in successfully");
         navigate("/HomeWhenLogged");
+    //   props.isUserLoggedIn=true;
+    //   userAuth(isUserLoggedIn)
+        // <HomeWhenLoggedIn text={'true'}/>
 
   }
 }
@@ -156,6 +162,8 @@ let executeUserRegistration = async () => {
     return (
         <div className="teachers-register-container">
             <form onSubmit={handleSubmit} >
+                        {/* <HomeWhenLoggedIn text={'true'}/> */}
+
                 {/* <h2>Login</h2> */}
                 <h2>Welcome Back</h2>
                 <h5 className='mb-3'>Please sign-in to continue!</h5>
@@ -178,7 +186,7 @@ let executeUserRegistration = async () => {
                         required
                     />
                 </div>
-                <button className="w-28 mt-4 bg-orange-300 border rounded" onClick={()=>executeUserRegistration()} type="submit" >Login</button>
+                <button className="w-28 mt-4 bg-orange-400 border rounded" onClick={()=>executeUserRegistration()} type="submit" >Login</button>
                 
             </form>
         </div>

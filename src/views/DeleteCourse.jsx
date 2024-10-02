@@ -53,13 +53,7 @@ setCourses(courses.filter((course)=>{
 alert('deleted')
 console.warn(response2);
 
-// await fetch(`http://educational-platform-2024.runasp.net/api/Dashborad/deleteCourse/${cId}`,{method:"DELETE"})
-// .then(()=>{
-// return setCourses(courses.filter(course=>
-//    course.cId !== cId
-// ))
 
-// })
 };
   const getProducts=async()=>{
         let response1;
